@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :recoverable, :lockable, :validatable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :rememberable, :trackable
   has_many :carts
-
-  attr_accessor :current_cart
+  belongs_to :current_cart, class_name: 'Cart'
 
 end
